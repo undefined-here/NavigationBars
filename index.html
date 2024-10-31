@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation Bars</title>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #1a1a1a;
+        color: white;
+        padding: 20px;
+      }
+      .nav-container {
+        margin-bottom: 40px;
+      }
+      h2 {
+        margin-bottom: 10px;
+      }
+      #nav1 {
+        background-color: #f8f9fa;
+        padding: 10px;
+        margin: 12px;
+        border-radius: 8px;
+      }
+      #nav1 ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      #nav1 li {
+        display: inline;
+      }
+      #nav1 a {
+        text-decoration: none;
+        color: rgb(17, 17, 17);
+        padding: 5px 10px;
+        position: relative;
+      }
+      #nav1 button {
+        background-color: #254bf6;
+        color: white;
+        border: none;
+        font-weight: bold;
+        padding: 8px 25px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        border: 2px solid #254bf6;
+        transition: 0.3s ease-in-out;
+      }
+      #nav1 button:hover {
+        background-color: white;
+        color: #254bf6;
+      }
+      #nav1 a::after {
+        content: "";
+        background-color: #0a65c7;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        transform: scalex(0);
+        transition: transform 0.3s ease-in-out;
+      }
+      #nav1 a:hover::after {
+        transform: scaleX(1);
+      }
+
+      #nav2 {
+        background-color: #343a40;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 4px;
+        width: 200px;
+      }
+      #nav2 ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+      }
+      #nav2 li {
+        margin-bottom: 12px;
+      }
+      #nav2 a {
+        text-decoration: none;
+        color: white;
+        display: block;
+        padding: 10px;
+        font-size: 16px;
+        width: 100%;
+        border-radius: 4px;
+        transition: 0.2s ease-in-out;
+      }
+      #nav2 a:hover {
+        background-color: #1a1a1a;
+      }
+      #nav2 button {
+        background-color: #fff;
+        color: black;
+        border: none;
+        padding: 10px;
+        width: 100%;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 16px;
+        transition: 0.2s ease-in-out;
+      }
+      #nav2 button:hover {
+        background-color: black;
+        color: white;
+      }
+
+      #nav3 {
+        background-color: #353535;
+        border-radius: 8px;
+        padding: 10px;
+      }
+      #nav3 ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      #nav3 a {
+        text-decoration: none;
+        color: white;
+        padding: 10px;
+        display: block;
+      }
+      #nav3 .dropdown-content {
+        display: none;
+      }
+      #nav3 .dropdown{
+        position: relative;
+      }
+      #nav3 .dropdown:hover .dropdown-content {
+        display: block;
+        position: absolute;
+        background-color: #353c3f;
+        transition: 0.3s ease-in-out;
+        width: 150px;
+      }
+      #nav3 .dropdown-content a {
+        transition: 0.15s ease-in-out;
+      }
+      #nav3 .dropdown-content a:hover {
+        background-color: #1f212b;
+      }
+      #nav3 button{
+        background-color: black;
+        color: white;
+        font-size: large;
+        padding: 8px 15px;
+        border:none;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav-container">
+      <h2>Variation 1 : Horizontal with underline effect</h2>
+      <div id="nav1">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="#"> About</a>
+          </li>
+          <li><a href="#">Products</a></li>
+          <li><button>Login</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="nav-container">
+      <h2>Variation 2 : Vertical with hover effect</h2>
+      <div id="nav2">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Products</a></li>
+          <li><button>Login</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="nav-container">
+      <h2>Variation 3 : Horizontal with Dropdown</h2>
+      <div id="nav3">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li class="dropdown">
+            <a href="#">About</a>
+            <div class="dropdown-content">
+              <a href="#">Our Story</a>
+              <a href="#">Team</a>
+              <a href="#">Contact</a>
+            </div>
+          </li>
+          <li><a href="#">Products</a></li>
+          <li><button>Login</button></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
